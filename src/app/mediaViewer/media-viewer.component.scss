@@ -1,0 +1,18 @@
+.col-centre{
+    text-align: -webkit-center;
+    margin-top:20px;
+}
+.mat-button{
+    height: 40px;
+    width: 40px;
+    border: 1px solid #555;
+    border-radius: 50%;
+    background-color: white;
+    opacity: 0.7;
+    -webkit-transition: opacity 200ms;
+    transition: opacity 200ms;
+    min-width: 0;
+    line-height: 0px;
+    padding: 0 0px;
+    margin: 10px;
+}
