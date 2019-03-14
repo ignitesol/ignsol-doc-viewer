@@ -4,8 +4,6 @@ import { AppComponent } from './app.component';
 
 import { DocumentViewerModule } from './documentViewer/doc-viewer.module';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {MatButtonModule} from '@angular/material/button';
-import {MatIconModule} from '@angular/material/icon';
 
 @NgModule({
   declarations: [
@@ -14,8 +12,6 @@ import {MatIconModule} from '@angular/material/icon';
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
-    MatButtonModule,
-    MatIconModule,
     DocumentViewerModule
   ],
   providers: [],

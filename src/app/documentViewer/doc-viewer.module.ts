@@ -1,11 +1,11 @@
 
-import { NgModule } from '@angular/core';
+import { NgModule , ModuleWithProviders} from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 import { DocumentViewerComponent } from './doc-viewer.component';
 import { SafePipe } from './../services/safe.pipe';
-import { DOCVIEWER_CONFIG, DOCVIEWER_CONFIG_DEFAULT } from './doc-viewer.config';
+import { DOCVIEWER_CONFIG, DOCVIEWER_CONFIG_DEFAULT, DocViewerConfig } from './doc-viewer.config';
 
 import { ImageViewerModule as pdfViewerModule} from '@hallysonh/ngx-imageviewer';
 import { ImageViewerModule } from 'ngx-image-viewer';
@@ -30,4 +30,11 @@ import {MatIconModule} from '@angular/material/icon';
    ],
   exports: [DocumentViewerComponent],
 })
-export class DocumentViewerModule { }
+export class DocumentViewerModule {
+  static forRoot(config?: DocViewerConfig): ModuleWithProviders {
+    return {
+      ngModule: DocumentViewerModule,
+      providers: [{provide: 'config', useValue: config}]
+    };
+  }
+}
