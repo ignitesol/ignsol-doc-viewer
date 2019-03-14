@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { MediaViewerComponent } from './media-viewer.component';
+import { DocumentViewerComponent } from './doc-viewer.component';
 
-describe('MediaViewerComponent', () => {
-    let component: MediaViewerComponent;
-    let fixture: ComponentFixture<MediaViewerComponent>;
+describe('DocumentViewerComponent', () => {
+    let component: DocumentViewerComponent;
+    let fixture: ComponentFixture<DocumentViewerComponent>;
 
     beforeEach(async(() => {
         TestBed.configureTestingModule({
-            declarations: [MediaViewerComponent]
+            declarations: [DocumentViewerComponent]
         })
             .compileComponents();
     }));
 
     beforeEach(() => {
-        fixture = TestBed.createComponent(MediaViewerComponent);
+        fixture = TestBed.createComponent(DocumentViewerComponent);
         component = fixture.componentInstance;
         fixture.detectChanges();
     });

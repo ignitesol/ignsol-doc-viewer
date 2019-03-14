@@ -1,10 +1,10 @@
 import { Component, OnInit, Input, HostListener, Output, EventEmitter } from '@angular/core';
 @Component({
     selector: 'ignsol-doc-viewer',
-    templateUrl: './media-viewer.component.html',
-    styleUrls: ['./media-viewer.component.scss']
+    templateUrl: './doc-viewer.component.html',
+    styleUrls: ['./doc-viewer.component.scss']
 })
-export class MediaViewerComponent implements OnInit {
+export class DocumentViewerComponent implements OnInit {
     private src: any;
     @Input()
     index = 0;
