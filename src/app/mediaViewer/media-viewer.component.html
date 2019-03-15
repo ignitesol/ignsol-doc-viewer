@@ -1,11 +1,11 @@
 <div>
-  <div *ngIf="media?.mime === 'application/pdf' || media?.mime === 'image/jgeg'">
-    <ngx-imageviewer [src]="media?.imageUrl" [width]="canvasWidth" [height]="canvasHeight"></ngx-imageviewer>
+  <div *ngIf="media?.mimetype === 'application/pdf' || media?.mimetype.startsWith('image/') ">
+    <ngx-imageviewer [src]="media?.url" [width]="canvasWidth" [height]="canvasHeight"></ngx-imageviewer>
   </div>
- <div *ngIf="media?.mime === 'text/html'">
+ <div *ngIf="media?.mimetype === 'text/html'">
     <!-- <div [innerHTML]="theHtmlString"></div> -->
     <div class="col-centre">
-      <iframe [src]="media?.imageUrl | safe"  height={{canvasHeight}} width={{canvasWidth}}>
+      <iframe [src]="media?.url | safe"  height={{canvasHeight}} width={{canvasWidth}}>
         <p>Your browser does not support iframes.</p>
       </iframe>
   </div>
