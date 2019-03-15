@@ -18,7 +18,15 @@
       "dom"
     ],
     "paths": {
-      "@angular/*": ["node_modules/@angular/*"]
+      "@angular/*": [
+        "node_modules/@angular/*"
+      ],
+      "ignsol-doc-viewer": [
+        "dist/ignsol-doc-viewer"
+      ],
+      "ignsol-doc-viewer/*": [
+        "dist/ignsol-doc-viewer/*"
+      ]
     }
   }
 }

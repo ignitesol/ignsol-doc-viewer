@@ -28,7 +28,8 @@
             "scripts": [
               {
                 "input": "node_modules/pdfjs-dist/build/pdf.min.js"
-              }, {
+              },
+              {
                 "input": "node_modules/pdfjs-dist/build/pdf.worker.min.js"
               }
             ]
@@ -121,6 +122,46 @@
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
             "tsConfig": "e2e/tsconfig.e2e.json",
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    },
+    "ignsol-doc-viewer": {
+      "root": "projects/ignsol-doc-viewer",
+      "sourceRoot": "projects/ignsol-doc-viewer/src",
+      "projectType": "library",
+      "prefix": "enl",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/ignsol-doc-viewer/tsconfig.lib.json",
+            "project": "projects/ignsol-doc-viewer/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "project": "projects/ignsol-doc-viewer/ng-package.prod.json"
+            }
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/ignsol-doc-viewer/src/test.ts",
+            "tsConfig": "projects/ignsol-doc-viewer/tsconfig.spec.json",
+            "karmaConfig": "projects/ignsol-doc-viewer/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/ignsol-doc-viewer/tsconfig.lib.json",
+              "projects/ignsol-doc-viewer/tsconfig.spec.json"
+            ],
             "exclude": [
               "**/node_modules/**"
             ]

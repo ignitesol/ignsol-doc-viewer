@@ -1,0 +1,24 @@
+  <div>
+    <div *ngIf="media?.mime === 'application/pdf' || media?.mime === 'image/jgeg'">
+      <ngx-imageviewer [src]="media?.imageUrl" [width]="canvasWidth" [height]="canvasHeight"></ngx-imageviewer>
+    </div>
+   <div *ngIf="media?.mime === 'text/html'">
+      <!-- <div [innerHTML]="theHtmlString"></div> -->
+      <div class="col-centre">
+        <iframe [src]="media?.imageUrl"  height={{canvasHeight}} width={{canvasWidth}}>
+          <p>Your browser does not support iframes.</p>
+        </iframe>
+    </div>
+   </div>
+   <div  class="col-centre" *ngIf="noMediaText !== ''">
+      {{noMediaText}}
+  </div>
+   <div class="col-centre">
+    <button mat-button (click)="loadPrevDoc($event)" disabled ={{!enablePrevBtn}} >
+      <mat-icon>first_page</mat-icon>
+    </button>
+    <button mat-button (click)="loadNextDoc($event)" disabled ={{!enableNextBtn}} >
+      <mat-icon>last_page</mat-icon>
+    </button>
+  </div>
+  </div>

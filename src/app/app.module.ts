@@ -1,9 +1,11 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { AppComponent } from './app.component';
+import { CommonModule } from '@angular/common';
 
-import { DocumentViewerModule } from './documentViewer/doc-viewer.module';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+
+import { AppComponent } from './app.component';
+import {IgnsolDocViewerModule} from 'ignsol-doc-viewer';
 
 @NgModule({
   declarations: [
@@ -11,8 +13,9 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
   ],
   imports: [
     BrowserModule,
+    CommonModule,
     BrowserAnimationsModule,
-    DocumentViewerModule
+    IgnsolDocViewerModule
   ],
   providers: [],
   bootstrap: [AppComponent]
